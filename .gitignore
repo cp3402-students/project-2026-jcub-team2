@@ -1,0 +1,25 @@
+# WordPress core
+wp-admin/
+wp-includes/
+
+# User content
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+
+# Configuration and utility files
+wp-config-sample.php
+error_log
+.htaccess.save
+.htaccess.orig
+sitemap.xml
+sitemap.xml.gz
+
+# Development and environment files
+.DS_Store
+.vscode/
+.idea/
+npm-debug.log
+.sass-cache/
+/node_modules/
