@@ -9,10 +9,10 @@ services:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=deanberrie
-      - MYSQL_DATABASE=deanberrie
-      - MYSQL_USER=deanberrie
-      - MYSQL_PASSWORD=deanberrie
+      - MYSQL_ROOT_PASSWORD=kctennis
+      - MYSQL_DATABASE=kctennis
+      - MYSQL_USER=kctennis
+      - MYSQL_PASSWORD=kctennis
     expose:
       - 3306
       - 33060
@@ -25,9 +25,9 @@ services:
     restart: always
     environment:
       - WORDPRESS_DB_HOST=db
-      - WORDPRESS_DB_USER=deanberrie
-      - WORDPRESS_DB_PASSWORD=deanberrie
-      - WORDPRESS_DB_NAME=deanberrie
+      - WORDPRESS_DB_USER=kctennis
+      - WORDPRESS_DB_PASSWORD=kctennis
+      - WORDPRESS_DB_NAME=kctennis
 volumes:
   db_data:
   wp_data:
