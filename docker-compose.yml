@@ -30,7 +30,7 @@ services:
       - WORDPRESS_DB_NAME=kctennis
   kctennis:
     build:
-      context: https://github.com/cp3402-students/project-2026-jcub-team2/blob/development
+      context: https://github.com/cp3402-students/project-2026-jcub-team2.git#development
       dockerfile: docker-compose.yml
     ports: 
       -"8080:80"
