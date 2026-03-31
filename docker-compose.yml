@@ -28,6 +28,12 @@ services:
       - WORDPRESS_DB_USER=kctennis
       - WORDPRESS_DB_PASSWORD=kctennis
       - WORDPRESS_DB_NAME=kctennis
+  kctennis:
+    build:
+      context: https://github.com
+      dockerfile: ./cp3402-students/project-2026-jcub-team2/blob/development
+    ports: 
+      -"8080:80"
 volumes:
   db_data:
   wp_data:
