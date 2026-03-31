@@ -33,7 +33,7 @@ services:
       context: https://github.com/cp3402-students/project-2026-jcub-team2.git#development
       dockerfile: docker-compose.yml
     ports: 
-      -"8080:80"
+      - 80:80
 volumes:
   db_data:
   wp_data:
