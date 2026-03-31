@@ -1,6 +1,0 @@
-- Local environment setup
-- How changes are made and committed
-- How changes are tested
-- Deployment to staging
-- Deployment to production
-- Integration of project management and communication tools
