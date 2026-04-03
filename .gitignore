@@ -5,6 +5,7 @@ index.php
 xmlrpc.php
 license.txt
 readme.html
+.htaccess
 
 wp-content/*
 !wp-content/themes/
