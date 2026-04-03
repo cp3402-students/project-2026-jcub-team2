@@ -8,7 +8,7 @@ readme.html
 .htaccess
 
 wp-content/*
-!wp-content/themes/
+wp-content/themes/twenty*/
 !wp-content/themes/kctennisblast-theme/
 
 
