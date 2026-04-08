@@ -176,3 +176,24 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function kctennisblast_widgets_init() {
+    $footer_columns = array(
+        'footer-1' => __( 'Footer Branding', 'kctennisblast-theme' ),
+        'footer-2' => __( 'Footer Contact', 'kctennisblast-theme' ),
+        'footer-3' => __( 'Footer Office Hours', 'kctennisblast-theme' ),
+        'footer-4' => __( 'Footer Connect', 'kctennisblast-theme' ),
+    );
+
+    foreach ( $footer_columns as $id => $name ) {
+        register_sidebar( array(
+            'name'          => $name,
+            'id'            => $id,
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ) );
+    }
+}
+add_action( 'widgets_init', 'kctennisblast_widgets_init' );
+

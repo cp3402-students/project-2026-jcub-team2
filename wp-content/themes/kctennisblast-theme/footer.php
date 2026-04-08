@@ -2,29 +2,40 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package kctennisblast-theme
  */
-
 ?>
 
 	<footer id="colophon" class="site-footer">
+		
+		<?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) : ?>
+			<div class="footer-widgets-container container">
+				
+				<div class="footer-column footer-branding">
+					<?php dynamic_sidebar( 'footer-1' ); ?>
+				</div>
+
+				<div class="footer-column footer-contact">
+					<?php dynamic_sidebar( 'footer-2' ); ?>
+				</div>
+
+				<div class="footer-column footer-hours">
+					<?php dynamic_sidebar( 'footer-3' ); ?>
+				</div>
+
+				<div class="footer-column footer-connect">
+					<?php dynamic_sidebar( 'footer-4' ); ?>
+				</div>
+
+			</div>
+		<?php endif; ?>
+
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kctennisblast-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'kctennisblast-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'kctennisblast-theme' ), 'kctennisblast-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
+			<div class="container">
+				<p>&copy; <?php echo date_i18n( _x( 'Y', 'copyright date format', 'kctennisblast-theme' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'kctennisblast-theme' ); ?></p>
+			</div>
 		</div><!-- .site-info -->
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

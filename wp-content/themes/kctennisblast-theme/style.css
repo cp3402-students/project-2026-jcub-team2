@@ -967,3 +967,38 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+/* Custom Additions
+--------------------------------------------- */
+.site-footer {
+    background-color: grey;
+    color: orange;
+    padding: 60px 0 20px;
+}
+
+.footer-widgets-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+}
+
+.footer-column h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.site-info {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-top: 20px;
+}
