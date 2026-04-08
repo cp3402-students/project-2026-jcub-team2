@@ -7,21 +7,19 @@ readme.html
 .htaccess
 
 wp-content/*
-wp-content/themes/twenty*/
-!wp-content/themes/kctennisblast-theme/
 
+
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/kctennisblast-theme/
+!wp-content/themes/kctennisblast-theme/**
 
 
 wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
 wp-content/blogs.dir/
-
-
 wp-content/plugins/
-# add pluging you want to avoid .gitignore:
-# !wp-content/plugins/your-plugin/
-
 
 wp-config.php
 wp-config-sample.php
@@ -34,7 +32,6 @@ error_log
 Thumbs.db
 .vscode/
 .idea/
-
 
 node_modules/
 npm-debug.log
