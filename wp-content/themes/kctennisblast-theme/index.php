@@ -17,6 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 
+
 		<?php
 		if ( have_posts() ) :
 
@@ -31,13 +32,33 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+			?>
 
+				<div class="my-container">
+					<div class="my-inner">
+
+					<div class="top-row">
+						<h1><?php the_title(); ?></h1>
+						<a href="#" class="btn">Button</a>
+					</div>
+
+					<div class="content-area">
+						<?php the_content(); ?>
+					</div>
+
+					<div class="bottom-button">
+						<a href="#" class="btn">Another Button</a>
+					</div>
+						
+					</div>
+				</div>
+			<?php
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				
 
 			endwhile;
 

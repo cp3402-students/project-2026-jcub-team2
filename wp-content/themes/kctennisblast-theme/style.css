@@ -1070,3 +1070,32 @@ textarea {
 .header-cta-wrapper .cta-menu li a:hover {
     transform: scale(1.05);   /* Subtle pop on hover */
 }
+
+.my-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-area {
+  margin: 30px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #333;
+}
