@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4
 
       - name: Deploy theme via rsync
-        uses: burnett01/rsync-deployments@v7.0.1
+        uses: burnett01/rsync-deployments@v6
         with:
           switches: -avzr --delete --exclude=".git*" --exclude="node_modules"
           path: ./
