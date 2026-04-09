@@ -24,5 +24,6 @@ jobs:
           rsync -avz --delete \
             --exclude=".git*" \
             --exclude="node_modules" \
+            --rsync-path="sudo rsync" \
             -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
             ./ ${{ secrets.USER_NAME }}@${{ secrets.HOST_IP }}:/var/www/html
