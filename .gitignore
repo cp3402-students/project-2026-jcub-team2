@@ -2,6 +2,7 @@ wp-admin/
 wp-includes/
 wp-*.php
 xmlrpc.php
+/index.php
 license.txt
 readme.html
 .htaccess
