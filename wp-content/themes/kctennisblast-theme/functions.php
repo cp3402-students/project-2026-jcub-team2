@@ -197,3 +197,10 @@ function kctennisblast_widgets_init() {
 }
 add_action( 'widgets_init', 'kctennisblast_widgets_init' );
 
+function kctennisblast_theme_register_menus() {
+    register_nav_menus( array(
+        'menu-cta' => esc_html__( 'Header CTA Button', 'kctennisblast-theme' ),
+    ) );
+}
+add_action( 'init', 'kctennisblast_theme_register_menus' );
+

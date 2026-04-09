@@ -971,8 +971,8 @@ textarea {
 /* Custom Additions
 --------------------------------------------- */
 .site-footer {
-    background-color: grey;
-    color: orange;
+    background-color: orange;
+    color: black;
     padding: 60px 0 20px;
 }
 
@@ -1001,4 +1001,72 @@ textarea {
     border-top: 1px solid #333;
     margin-top: 40px;
     padding-top: 20px;
+}
+
+/* Container Layout */
+.header-container {
+    display: flex;
+    align-items: center;      /* Vertically centers logo, menu, and button */
+    justify-content: space-between; /* Logo left, Menu center, Button right */
+    background-color: orange;   /* Black background from your image */
+    padding: 10px 40px;       /* Adds breathing room */
+}
+
+/* 1. Branding (Left) */
+.site-branding img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* 2. Navigation (Center) */
+.main-navigation {
+    flex-grow: 1;             /* Helps in centering */
+    display: flex;
+    justify-content: center;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li a {
+    color: black;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Active Underline (as seen in your image) */
+.main-navigation .current-menu-item > a {
+    border-bottom: 3px solid white; /* Neon green underline */
+    color: white;
+}
+
+/* 3. CTA Button (Right) */
+.header-cta-wrapper .cta-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-cta-wrapper .cta-menu li a {
+    background-color: red; /* Neon green button */
+    color: white;
+    padding: 12px 25px;       /* Controlled padding so it's not full-height */
+    border-radius: 4px;       /* Optional: slight rounding */
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.header-cta-wrapper .cta-menu li a:hover {
+    transform: scale(1.05);   /* Subtle pop on hover */
 }
