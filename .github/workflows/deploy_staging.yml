@@ -5,7 +5,6 @@ on:
     branches:
       - staging
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,12 +18,11 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.HOST_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy via rsync
         run: |
           rsync -avz --delete \
             --exclude=".git*" \
             --exclude="node_modules" \
-            -e "ssh -i ~/.ssh/id_rsa" \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
             ./ ${{ secrets.USER_NAME }}@${{ secrets.HOST_IP }}:/var/www/html/wp-content/themes/kctennisblast/
