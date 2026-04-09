@@ -1,20 +1,24 @@
-name: Deploy to EC2
+name: Deploy WordPress Theme to EC2
+
 on:
   push:
-    branches: staging
+    branches:
+      - staging
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@master
+      - name: Checkout repository
+        uses: actions/checkout@v4  
+
+      - name: Deploy theme via rsync
+        uses: burnett01/rsync-deployments@v7.0.1
         with:
-          host: ${{ secrets.HOST_IP }}
-          username: ${{ secrets.USER_NAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            cd /var/www/html
-            git pull origin staging
-            # Restart your application service here
+          switches: -avzr --delete --exclude=".git*" --exclude="node_modules"
+          path: ./
+          remote_path: /var/www/html/wp-content/themes/your-theme/
+          remote_host: ${{ secrets.HOST_IP }}
+          remote_user: ${{ secrets.USER_NAME }}
+          remote_key: ${{ secrets.SSH_KEY }}
