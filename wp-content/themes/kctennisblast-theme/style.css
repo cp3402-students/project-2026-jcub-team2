@@ -1097,7 +1097,7 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: #43a047;
 }
 
 h1, h2 {
@@ -1106,4 +1106,64 @@ h1, h2 {
 
 p, .btn, button {
 	font-family: Montserrat;
+}
+
+.form-area {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-area form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spacing between fields */
+}
+
+.form-area input,
+.form-area textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.form-area input:hover,
+.form-area textarea:hover {
+  background-color: #eaffea; /* light green */
+  border-color: #7acb7a;
+}
+
+/* Clicked/typing effect */
+.form-area input:focus,
+.form-area textarea:focus {
+  background-color: #eaffea;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.form-area textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-area button {
+  padding: 12px;
+  background-color: #a8e400;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.form-area button:hover {
+  background-color: #43a047;
 }
