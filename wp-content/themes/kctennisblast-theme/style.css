@@ -662,14 +662,13 @@ textarea {
 }
 
 .main-navigation ul ul {
-	background-color:#ddd;
-	float: left;
-	position: absolute;
-	top: 100%;
-	z-index: 99999;
-	left: 50%;
-    transform: translateX(-50%);
-	text-align: center; 
+    background-color: #ddd;
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    z-index: 99999;
+    text-align: center;
 }
 
 .main-navigation ul ul ul {
@@ -680,7 +679,8 @@ textarea {
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	display: block;
-	left: auto;
+	left: 50%;
+    transform: translateX(-50%);
 }
 
 .main-navigation ul ul a {
