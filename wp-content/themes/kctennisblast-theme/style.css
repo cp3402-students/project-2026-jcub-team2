@@ -85,8 +85,8 @@ body {
  * Render the `main` element consistently in IE.
  */
 main {
-	margin-left: 7.5%;
-	margin-right: 7.5%;
+	margin-left: 0;
+	margin-right: 0;
 	display: block;
 }
 
@@ -770,6 +770,45 @@ textarea {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/* Content layout */
+main {
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+}
+
+.entry-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.entry-content > * {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+    box-sizing: border-box;
+}
+
+.entry-content > .wp-block-group.has-background,
+.entry-content > .wp-block-columns.has-background {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /* Comments
