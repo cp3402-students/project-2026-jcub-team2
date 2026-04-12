@@ -114,25 +114,6 @@ function kctennisblast_theme_content_width() {
 }
 add_action( 'after_setup_theme', 'kctennisblast_theme_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function kctennisblast_theme_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'kctennisblast-theme' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'kctennisblast-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', 'kctennisblast_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
@@ -207,8 +188,8 @@ add_action( 'init', 'kctennisblast_theme_register_menus' );
 # Enqueue font
 function kctennisblast_fonts() {
   wp_enqueue_style(
-    'kctennisblast-poppins',
-    'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+    'kctennisblast-google-fonts',
+    'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
     array(),
     null
   );
