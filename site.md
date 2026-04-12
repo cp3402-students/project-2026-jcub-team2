@@ -89,10 +89,6 @@ WP Go Maps is used to display the venue location. To edit the map:
 
 The map is embedded on pages using a shortcode. To add the map to a new page, add a **Shortcode** block and paste the map shortcode (found on the Maps settings page).
 
-## Media
-
-All images should be uploaded through **Media → Add New** or directly within the block editor. Ensure any new images comply with commercial-use licensing.
-
 ## Important Notes
 
 - Do not install page builder plugins — the site uses a custom theme that relies on the default block editor
