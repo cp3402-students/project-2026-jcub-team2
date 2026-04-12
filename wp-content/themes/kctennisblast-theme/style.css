@@ -668,6 +668,9 @@ textarea {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+	left: 50%;
+    transform: translateX(-50%);
+	text-align: center; 
 }
 
 .main-navigation ul ul ul {
