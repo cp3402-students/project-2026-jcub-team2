@@ -666,8 +666,10 @@ textarea {
 	float: left;
 	position: absolute;
 	top: 100%;
-	left: -999em;
+	left: 50%;
+    transform:translateX(-50%);
 	z-index: 99999;
+    text-allign: center;
 }
 
 .main-navigation ul ul ul {
@@ -1172,3 +1174,17 @@ p, .btn, button {
 .form-area button:hover {
   background-color: #43a047;
 }
+
+# Font
+
+body,button,input,select,textarea {
+  font-family: 'Poppins', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.site footer, .site-footer * {
+    font-family: 'Poppins', sans-serif;
+}
+
