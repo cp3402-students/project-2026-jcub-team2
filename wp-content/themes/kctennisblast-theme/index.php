@@ -34,24 +34,10 @@ get_header();
 				the_post();
 			?>
 
-				<div class="my-container">
-					<div class="my-inner">
-
-					<div class="top-row">
-						<h1><?php the_title(); ?></h1>
-						<a href="#" class="btn">Button</a>
-					</div>
-
-					<div class="content-area">
-						<?php the_content(); ?>
-					</div>
-
-					<div class="bottom-button">
-						<a href="#" class="btn">Another Button</a>
-					</div>
-						
-					</div>
-				</div>
+				<?php
+				get_template_part( 'template-parts/content', get_post_type() );
+				?>
+				
 			<?php
 				/*
 				 * Include the Post-Type-specific template for the content.
