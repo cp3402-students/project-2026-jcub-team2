@@ -1,10 +1,3 @@
-Explain your theme to another developer so that they could efficiently take over development:
-- Theme features
-- Key files and structure
-- Conventions used
-- Important design decisions
-- Anything non‑obvious
-
 # Theme Documentation
 
 This guide explains the KC Tennis Blast custom WordPress theme so that another developer could efficiently take over development.
