@@ -1,9 +1,9 @@
-name: Deploy WordPress Theme to EC2
+name: Deploy WordPress Theme to EC2 Production
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   deploy:
@@ -11,14 +11,19 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4
 
-      - name: Deploy theme via rsync
-        uses: burnett01/rsync-deployments@v7.0.1
-        with:
-          switches: -avzr --delete --exclude=".git*" --exclude="node_modules"
-          path: ./
-          remote_path: /var/www/html/wp-content/themes/your-theme/
-          remote_host: ${{ secrets.HOST_IP }}
-          remote_user: ${{ secrets.USER_NAME }}
-          remote_key: ${{ secrets.SSH_KEY }}
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.PRODUCTION_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude=".git*" \
+            --exclude="node_modules" \
+            --rsync-path="sudo rsync" \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
+            ./ ${{ secrets.PRODUCTION_USER_NAME }}@${{ secrets.PRODUCTION_HOST_IP }}:/var/www/html
