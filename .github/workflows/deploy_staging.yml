@@ -1,9 +1,9 @@
-name: Deploy WordPress Theme to EC2
+name: Deploy WordPress Theme to EC2 Production
 
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   deploy:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.PRODUCTION_SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
 
       - name: Deploy via rsync
@@ -26,4 +26,4 @@ jobs:
             --exclude="node_modules" \
             --rsync-path="sudo rsync" \
             -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
-            ./ ${{ secrets.USER_NAME }}@${{ secrets.HOST_IP }}:/var/www/html
+            ./ ${{ secrets.PRODUCTION_USER_NAME }}@${{ secrets.PRODUCTION_HOST_IP }}:/var/www/html
