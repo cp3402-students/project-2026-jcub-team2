@@ -1,0 +1,29 @@
+name: Deploy WordPress Theme to EC2 Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude=".git*" \
+            --exclude="node_modules" \
+            --rsync-path="sudo rsync" \
+            -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
+            ./ ${{ secrets.USER_NAME }}@${{ secrets.HOST_IP }}:/var/www/html
