@@ -16,7 +16,7 @@ Overall, the KC Tennis Blast theme aims to provide a professional yet approachab
 
 
 ## Links
-- Production Site
+- Production Site: http://52.64.213.179/
 - Trello Board: https://trello.com/b/sYAR87Pe/project-2026-jcub-team2
 
 ## Documentation
