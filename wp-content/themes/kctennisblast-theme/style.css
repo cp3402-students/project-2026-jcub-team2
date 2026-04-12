@@ -85,8 +85,8 @@ body {
  * Render the `main` element consistently in IE.
  */
 main {
-	margin-left: 7.5%;
-	margin-right: 7.5%;
+	margin-left: 0;
+	margin-right: 0;
 	display: block;
 }
 
@@ -666,10 +666,8 @@ textarea {
 	float: left;
 	position: absolute;
 	top: 100%;
-	left: 50%;
-    transform:translateX(-50%);
+	left: -999em;
 	z-index: 99999;
-    text-allign: center;
 }
 
 .main-navigation ul ul ul {
@@ -772,6 +770,45 @@ textarea {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/* Content layout */
+main {
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+}
+
+.entry-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.entry-content > * {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+    box-sizing: border-box;
+}
+
+.entry-content > .wp-block-group.has-background,
+.entry-content > .wp-block-columns.has-background {
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 7.5vw;
+    padding-right: 7.5vw;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 /* Comments
@@ -1174,17 +1211,3 @@ p, .btn, button {
 .form-area button:hover {
   background-color: #43a047;
 }
-
-# Font
-
-body,button,input,select,textarea {
-  font-family: 'Poppins', sans-serif;
-}
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Poppins', sans-serif;
-}
-
-.site footer, .site-footer * {
-    font-family: 'Poppins', sans-serif;
-}
-
