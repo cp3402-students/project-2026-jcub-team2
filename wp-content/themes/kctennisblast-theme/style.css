@@ -85,6 +85,8 @@ body {
  * Render the `main` element consistently in IE.
  */
 main {
+	margin-left: 7.5%;
+	margin-right: 7.5%;
 	display: block;
 }
 
@@ -563,7 +565,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
+	border-radius: 4px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
 	line-height: 1;
@@ -606,7 +608,7 @@ input[type="color"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding: 3px;
 }
 
@@ -660,7 +662,7 @@ textarea {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	background-color:#ddd;
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -915,7 +917,7 @@ textarea {
 
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
-	border-radius: 3px;
+	border-radius: 4px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	clip-path: none;
@@ -1014,7 +1016,7 @@ textarea {
 
 /* 1. Branding (Left) */
 .site-branding img {
-    max-height: 50px;
+    max-height: 80px;
     width: auto;
     display: block;
 }
@@ -1089,13 +1091,81 @@ textarea {
 
 .btn {
   display: inline-block;
-  background-color: #000;
-  color: #fff;
+  background-color: #a8e400;
+  color: #000;
   padding: 10px 20px;
-  text-decoration: none;
+  text-decoration: none;	
   border-radius: 4px;
 }
 
 .btn:hover {
-  background-color: #333;
+  background-color: #43a047;
+}
+
+h1, h2 {
+	font-family: Poppins;
+}
+
+p, .btn, button {
+	font-family: Montserrat;
+}
+
+.form-area {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-area form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* spacing between fields */
+}
+
+.form-area input,
+.form-area textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Hover effect */
+.form-area input:hover,
+.form-area textarea:hover {
+  background-color: #eaffea; /* light green */
+  border-color: #7acb7a;
+}
+
+/* Clicked/typing effect */
+.form-area input:focus,
+.form-area textarea:focus {
+  background-color: #eaffea;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.form-area textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-area button {
+  padding: 12px;
+  background-color: #a8e400;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.form-area button:hover {
+  background-color: #43a047;
 }
