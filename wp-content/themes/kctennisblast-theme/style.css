@@ -723,6 +723,9 @@ textarea {
 .post-navigation {
 	margin: 0 0 1.5em;
 }
+.wp-element-button {
+  border-radius: 4px;
+}
 
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
