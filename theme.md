@@ -38,7 +38,7 @@ These are the files that make this theme unique:
 - **footer.php** — custom four-column widget layout with dynamic copyright
 - **style.css (Custom Additions section)** — all the branded styling including header, footer, navigation, buttons, forms, content layout, and typography
 - **functions.php (bottom section)** — footer widget area registration, CTA menu registration, and Google Fonts enqueuing
-- **template-parts/content-page.php** — page title output removed so titles are controlled in the block editor
+- **template-parts/content-page.php** — page title output removed so titles are controlled, bloat features that are enabled by default have also been disabled here
 
 All other files remain as provided by Underscores and handle standard WordPress functionality like comments, search results, archives, and accessibility.
 
